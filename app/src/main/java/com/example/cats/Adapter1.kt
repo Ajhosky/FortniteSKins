@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.cats.R
 import com.example.cats.databinding.SkinBinding
 
-class Adapter1(private val dataSet: Array<String>) :
+class Adapter1(private val dataSet: List<Int>) :
     RecyclerView.Adapter<Adapter1.ViewHolder>() {
 
     /**
@@ -38,10 +38,16 @@ class Adapter1(private val dataSet: Array<String>) :
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        viewHolder.binding.skinImage.setImageResource(1)
+        viewHolder.binding.skinImage.setImageResource(dataSet[position])
     }
 
     // Return the size of your dataset (invoked by the layout manager)
     override fun getItemCount() = dataSet.size
+//    fun addElement(newElement: Int) {
+//        TODO("Not yet implemented")
+//        //
+//        dataSet = dataSet + newElement
+//        notifyDataSetChanged()
+//    }
 
 }
