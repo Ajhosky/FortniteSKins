@@ -1,3 +1,4 @@
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.cats.R
 import com.example.cats.databinding.SkinBinding
 
-class Adapter1(private val dataSet: List<Int>) :
+class Adapter1(private val dataSet: List<Int>, private val dataSetnames: List<String>) :
     RecyclerView.Adapter<Adapter1.ViewHolder>() {
 
     /**
@@ -39,6 +40,9 @@ class Adapter1(private val dataSet: List<Int>) :
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
         viewHolder.binding.skinImage.setImageResource(dataSet[position])
+        viewHolder.binding.forniteNameView.text = dataSetnames[position];
+        Log.e("test1", dataSet.toString())
+        Log.e("test1", dataSetnames.toString())
     }
 
     // Return the size of your dataset (invoked by the layout manager)
